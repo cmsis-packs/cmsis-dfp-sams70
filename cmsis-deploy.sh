@@ -1,9 +1,9 @@
 #!/bin/bash
 
-name=cmsis-dfp-template
-vendor=template
-version=0.0
-source_url=
+name=cmsis-dfp-sams70
+vendor=Atmel
+version=2.4.134
+source_url=http://packs.download.atmel.com/$vendor.SAMS70_DFP.$version.atpack
 
 build_dir='cmsis_build'
 deploy_dir='cmsis_deploy'
@@ -55,10 +55,8 @@ extract() {
 
 deploy() {
     echo "deploying..."
-    cp -r $build_dir/Device $deploy_dir
-    cp -r $build_dir/Documents $deploy_dir
-    cp -r $build_dir/Flash $deploy_dir
-    cp -r $build_dir/SVD $deploy_dir
+    cp -r $build_dir/sams70a $deploy_dir
+    cp -r $build_dir/sams70b $deploy_dir
 }
 
 prepare
